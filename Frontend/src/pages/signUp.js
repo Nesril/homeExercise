@@ -9,6 +9,7 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import CommonSection from "../components/commonSection";
 import { pink } from "@mui/material/colors";
 import Theme from "../assets/css/theme";
+import { useNavigate } from "react-router-dom";
 
 const styles = (theme) => ({
   container: {
@@ -96,7 +97,6 @@ export default function SignUp() {
     }
     else setData({ ...data, [event.target.id]: event.target.value.trim() });
   };
-
   const [unFieldComponents, setUnFieldComponents] = useState({
     email: false,
     firstName: false,
@@ -158,7 +158,7 @@ export default function SignUp() {
      dispatch(register(data));
      setTimeout(()=>{
        dispatch(fetchUser())
-     },5000)
+     },7000)
   }
 
   return (

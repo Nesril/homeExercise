@@ -172,7 +172,7 @@ const fetchAllUsers = async (req, res) => {
     // Calculate skip value to determine the starting index of users to fetch
     const skip = (page - 1) * limit;
 
-    const users = await User.find().skip(skip).limit(limit);
+    const users = await User.find().sort({ createdAt: -1 }).skip(skip).limit(limit);
 
     return res.status(201).send({ users, totalPages });
 

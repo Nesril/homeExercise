@@ -14,6 +14,7 @@ import { Radio } from "antd";
 import { useNavigate } from "react-router-dom";
 import CustomInput from "../components/CustomInput";
 import {
+  fetchUser,
   logIn,
 } from "../common/action/authAction";
 import { useDispatch, useSelector } from "react-redux";
@@ -75,6 +76,7 @@ export default function SignIn() {
     password: false,
   });
 
+  let navigate = useNavigate()
 
   function isValidEmail(email) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -103,7 +105,6 @@ export default function SignIn() {
       password:password
     };
     dispatch(logIn(dataToBePassed));
-    
   }
   
   return (

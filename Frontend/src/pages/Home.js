@@ -112,7 +112,7 @@ export default function Home() {
         return map;
       }, {});
       const sortedUsers = Object.values(uniqueUsers).sort((a, b) =>
-        a._id.localeCompare(b._id)
+        b.createdAt.localeCompare(a.createdAt)
       );
       setMergedUsers(sortedUsers);
     }

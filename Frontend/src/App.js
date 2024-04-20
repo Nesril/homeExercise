@@ -28,7 +28,7 @@ export default function App() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchUser());
-  }, []);
+  }, [dispatch]);
   const auth = useSelector((state) => state.auth);
   return auth.loading ? (
     <div

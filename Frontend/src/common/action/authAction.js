@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import {
   FETCH_USER,
   FETCH_USER_SUCCESS,
@@ -38,9 +39,10 @@ export const register = (data) => async (dispatch) => {
       }
     );
     const user = await response.json();
+    console.log(user);
     if (user.msg) {
       dispatch({ type: USER_SIGN_UP_SUCCESS, payload: user });
-      window.location.href = "/logIn";
+      window.location.href='/logIn'
     } else {
       dispatch({ type: USER_SIGN_UP_FAILED, payload: user });
     }
@@ -77,7 +79,7 @@ export const logIn = (data) => async (dispatch) => {
       const { token } = user;
       document.cookie = `authToken=${token}; path=/;`;
       dispatch({ type: VERIFY_OTP_SUCCESS, payload: user });
-      window.location.href = "/";
+      window.location.href='/'
     } else {
       dispatch({ type: VERIFY_OTP_FAILED, payload: user });
     }
