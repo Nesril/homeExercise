@@ -16,6 +16,8 @@
 
 ## Backend
 
+### Unfortunately, the URL you provided seems to be non-functional. As a result, I took the initiative to create my own URL and attempted to incorporate the desired functionality of your API. I kindly request that you review the URL specified in the .env file 
+
 ### register
 - Description: This feature allows users to register with a unique username and email. It includes logic to ensure that only unique usernames and email addresses are allowed. The password is hashed for security purposes.
 

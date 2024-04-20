@@ -159,7 +159,11 @@ export default function Home() {
             ))}
           </div>
         ) : (
-          <div className={classes?.noUserFound}>No user found</div>
+          <>
+            {allUsers.loading ? null : (
+              <div className={classes?.noUserFound}>No user found</div>
+            )}
+          </>
         )}
 
         <div ref={sentinelRef} style={{ height: "1px" }}></div>
@@ -192,7 +196,7 @@ const EachUsers = ({ data, classes }) => {
                   style={{ width: "100px", objectFit: "cover" }}
                 />
               </div>
-              <p style={{fontWeight:"700"}}>Buyer</p>
+              <p style={{ fontWeight: "700" }}>Buyer</p>
             </>
           ) : (
             <>
@@ -257,4 +261,3 @@ const EachUsers = ({ data, classes }) => {
     </div>
   );
 };
-
