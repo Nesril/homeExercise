@@ -86,7 +86,15 @@ export default function SignUp() {
   const [isBuyer, setIsBuyer] = useState(false);
 
   const onInputChange = (event) => {
-    setData({ ...data, [event.target.id]: event.target.value.trim() });
+    if (event.target.id === 'userName'||event.target.id === 'email') {
+      const trimmedValue = event.target.value.trim();
+      const sanitizedValue = trimmedValue.replace(/\s+/g, '');
+      setData({ ...data, [event.target.id]: sanitizedValue });
+    } 
+    else if(event.target.id === 'address') {
+      setData({ ...data, [event.target.id]: event.target.value });
+    }
+    else setData({ ...data, [event.target.id]: event.target.value.trim() });
   };
 
   const [unFieldComponents, setUnFieldComponents] = useState({
